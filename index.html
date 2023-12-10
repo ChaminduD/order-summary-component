@@ -2,36 +2,198 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Order summary card</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+    body{
+      margin: 0;
+      padding: 0;
+      font-family: 'Red Hat Display', sans-serif;
+      box-sizing: border-box;
+      background-color: hsl(225, 100%, 94%);
+      background-image: url("images/pattern-background-mobile.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    main{
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container{
+      width: 340px;
+      background-color: hsl(0, 0%, 100%);
+      margin: 0 20px;
+      text-align: center;
+      border-radius: 20px;
+      box-shadow: 0 30px 30px hsla(224, 23%, 55%, 0.2);
+    }
+    #illustration{
+      border-radius: 20px 20px 0 0;
+      width: 340px;
+    }
+    .card{
+      padding: 26px;
+    }
+    .card h1{
+      font-size: 24px;
+      font-weight: 900;
+      color: hsl(223, 47%, 23%);
+      margin: 0;
+    }
+    .card p{
+      color: hsl(224, 23%, 55%);
+      line-height: 26px;
+      padding: 0 10px;
+    }
+    .plan{
+      background-color: hsl(225, 100%, 98%);
+      padding: 16px;
+      border-radius: 10px;
+      height: 45px;
+      margin-top: 26px;
+      margin-bottom: 26px;
+    }
+    .plan img{
+      float: left;
+    }
+    .plan p{
+      display: flex;
+    }
+    #annual{
+      font-weight: 700;
+      color: hsl(223, 47%, 23%);
+      padding-left: 20px;
+      margin-top: 0px;
+    }
+    #price{
+      margin-left: 58px;
+      margin-top: -20px;
+    }
+    .plan a{
+      display: flex;
+      margin-left: 202px;
+      margin-top: -50px;
+      font-size: 14px;
+      font-weight: 700;
+      color: hsl(245, 75%, 52%);
+    }
+    .plan a:hover{
+      color: hsl(245, 87%, 69%);
+      text-decoration: none;
+    }
+    button{
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #btn-1{
+      width: 100%;
+      padding: 16px;
+      color: hsl(0, 0%, 100%);
+      background-color: hsl(245, 75%, 52%);
+      box-shadow: 0 20px 20px hsla(245, 75%, 52%, 0.2);
+    }
+    #btn-1:hover{
+      background-color: hsl(245, 87%, 69%);
+    }
+    #btn-2{
+      color: hsl(224, 23%, 55%);
+      background-color: transparent;
+      margin-top: 26px;
+      margin-bottom: 8px;
+    }
+    #btn-2:hover{
+      color: hsl(223, 47%, 23%);
+    }
+    .attribution{
+      font-size: 11px;
+      text-align: center;
+    }
+    .attribution a{
+      color: hsl(228, 45%, 44%);
+    }
+    footer{
+      position: relative;
+      padding: 20px;
+    }
+
+    @media only screen and (min-width: 600px){
+      body{
+        background-image: url("images/pattern-background-desktop.svg");
+      }
+      .container{
+        width: 450px;
+      }
+      #illustration{
+        width: 450px;
+      }
+      .card{
+        padding: 42px;
+      }
+      .card h1{
+        font-size: 28px;
+      }
+      .plan{
+        margin-top: 20px;
+        padding: 28px;
+        height: 45px;
+      }
+      #annual{
+        padding-left: 24px;
+      }
+      #price{
+        margin-left: 62px;
+      }
+      .plan a{
+        margin-left: 256px;
+      }
+      #btn-1{
+        margin-top: 6px;
+        padding: 18px;
+      }
+      #btn-2{
+        margin-top: 32px;
+        margin-bottom: 4px;
+      }
+    }
   </style>
 </head>
 <body>
+  <main>
+    <section class="container">
+      <img id="illustration" src="images/illustration-hero.svg" alt="SVG Illustration">
 
-  Order Summary
+      <section class="card">
+        <h1>Order Summary</h1>
 
-  You can now listen to millions of songs, audiobooks, and podcasts on any 
-  device anywhere you like!
-
-  Annual Plan
-  $59.99/year
-
-  Change
-
-  Proceed to Payment
-  Cancel Order
+        <p>You can now listen to millions of songs, audiobooks, and podcasts on any 
+        device anywhere you like!</p>
   
-  <div class="attribution">
+        <section class="plan">
+          <img src="images/icon-music.svg" alt="SVG music icon">
+          <p id="annual">Annual Plan</p>
+          <p id="price">$59.99/year</p>
+          <span><a href="">Change</a></span>
+        </section>
+        
+        <button id="btn-1">Proceed to Payment</button>
+        <button id="btn-2">Cancel Order</button>
+      </section>
+    </section>
+  </main>
+  
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    Coded by <a href="https://www.linkedin.com/in/chamindudahanayaka/">Chamindu Dahanayaka</a>.
+  </footer>
 </body>
 </html>
